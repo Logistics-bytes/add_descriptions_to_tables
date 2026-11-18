@@ -1,0 +1,60 @@
+{
+  "cloud_run": {
+    "cloud_run_job_name": "wialon-data-extraction",
+    "region": "us-central1"
+  },
+  "data_extraction": {
+    "start_date": "",
+    "end_date": "",
+    "history": "1",
+    "duration": "1",
+    "delay": "1",
+    "schema_name": "dags/schema/DISATEL_KM_GRUPO_REPORT_DATA_EXTRACTION_PIPELINE_SCHEMA.json",
+    "scripts_name": "dags/sql_scripts/DISATEL_KM_GRUPO_REPORT_VALIDATE_AND_INSERT_UPDATE.sql",
+    "file_path": "data/Stage-APIs/wialon/disatel_km_grupo_report",
+    "dim_fact_stored_procs": [
+      "DWH.SP_DIM_CGROUPING ()",
+      "DWH.SP_DIM_DRIVER ()",
+      "DWH.SP_DIM_INFRACCION ()",
+      "DWH.SP_DIM_PAIS ()",
+      "DWH.SP_FACT_WIALON_KM_GRUPO ()"
+    ],
+    "location": "DISATEL",
+    "pais": "GT",
+    "pais_table_name": "DIM_PAIS"
+  },
+  "bigquery": {
+    "elt_table": "logging_data.FS_ELT_LOG",
+    "elt_job_table": "logging_data.FS_ELT_JOB_RUN_WM",
+    "raw_table": "WIALON_RAW_DATA.DISATEL_KM_GRUPO_REPORT",
+    "stage_table": "WIALON_STAGING_DATA.ST_DISATEL_KM_GRUPO_REPORT",
+    "fact_table": "DWH.FACT_WIALON_KM_GRUPO"
+  },
+  "pubsub": {
+    "pubsub_email": {
+      "topic": "send-email-topic"
+    },
+    "pubsub_log": {
+      "topic": "bigquery_id_topic"
+    }
+  },
+  "logging": {
+    "logging_project_name": "Stage - APIs",
+    "logging_process_name": "Wialon_Data_Pipeline",
+    "logging_data_proc": "logging_data.SP_INSERT_DATA_TO_PROCESS_LOG",
+    "dataset_data_proc": "logging_data.SP_INSERT_DATA_TO_DATASET",
+    "metric_data_proc": "logging_data.SP_INSERT_DATA_TO_DATASET_METRIC"
+  },
+  "metrics": [
+    {
+      "metric_name": "Count",
+      "sp_name": "logging_data.SP_CALCULATE_ROW_COUNT(?)",
+      "col_list": ""
+    },
+    {
+      "metric_name": "Count_NULL",
+      "sp_name": "logging_data.SP_CALCULATE_NULL_COUNT(?,?)",
+      "col_list": "soilmoisturevol10,soilmoisturevol20,soilmoisturevol04"
+    }
+  ]
+}

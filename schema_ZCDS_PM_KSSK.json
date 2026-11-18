@@ -1,0 +1,93 @@
+[
+  {
+    "name": "OBJEK",
+    "mode": "",
+    "type": "STRING",
+    "description": "Clave del objeto a clasificar",
+    "fields": []
+  },
+  {
+    "name": "MAFID",
+    "mode": "",
+    "type": "STRING",
+    "description": "Indicador objeto/clase",
+    "fields": []
+  },
+  {
+    "name": "KLART",
+    "mode": "",
+    "type": "STRING",
+    "description": "Categoría de la clase",
+    "fields": []
+  },
+  {
+    "name": "CLINT",
+    "mode": "",
+    "type": "STRING",
+    "description": "Número de clase interno",
+    "fields": []
+  },
+  {
+    "name": "ADZHL",
+    "mode": "",
+    "type": "STRING",
+    "description": "Contador interno p.archivo objetos por servicio modific.",
+    "fields": []
+  },
+  {
+    "name": "ZAEHL",
+    "mode": "",
+    "type": "INTEGER",
+    "description": "Posición de clasif.",
+    "fields": []
+  },
+  {
+    "name": "STATU",
+    "mode": "",
+    "type": "STRING",
+    "description": "Status de la clasificación",
+    "fields": []
+  },
+  {
+    "name": "STDCL",
+    "mode": "",
+    "type": "STRING",
+    "description": "Indicador: Clase estándar",
+    "fields": []
+  },
+  {
+    "name": "REKRI",
+    "mode": "",
+    "type": "STRING",
+    "description": "Indicador: Lista de materiales es recursiva",
+    "fields": []
+  },
+  {
+    "name": "AENNR",
+    "mode": "",
+    "type": "STRING",
+    "description": "Número de modificación",
+    "fields": []
+  },
+  {
+    "name": "DATUV",
+    "mode": "",
+    "type": "STRING",
+    "description": "Fecha de inicio de validez",
+    "fields": []
+  },
+  {
+    "name": "LKENZ",
+    "mode": "",
+    "type": "STRING",
+    "description": "Indicador de borrado",
+    "fields": []
+  },
+  {
+    "name": "DATUB",
+    "mode": "",
+    "type": "STRING",
+    "description": "Fecha fin validez",
+    "fields": []
+  }
+]
